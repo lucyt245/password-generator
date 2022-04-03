@@ -11,24 +11,29 @@ num_sym = int(input('How many symbols: '))
 
 password = ''
 
+# adds letters to the password
 for i in range (num_letters):
     rand = random.randint(0, 25)
+    # randomly assigns upper or lower case
     upper_or_lower = random.randint(0, 2)
     if upper_or_lower == 0:
         password = password + letters[rand]
     else:
         password = password + letters[rand].lower()
 
+# adds numbers to the password
 for i in range (num_nums):
     rand = random.randint(0, 9)
     password = password + str(numbers[rand])
 
+# adds symbols to the password
 for i in range(num_sym):
     rand = random.randint(0, 8)
     password = password + symbols[rand]
 
 real_pass = ''
 
+# randomises the order of the password
 for i in range(len(password)):
     rand = random.randint(0, len(password)-1)
     real_pass = real_pass + password[rand]
